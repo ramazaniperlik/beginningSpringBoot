@@ -18,7 +18,7 @@ public class ArtistController {
     return Database.artists.stream().filter(x->x.getId() == id).findFirst().orElse(new Artist());
         //Burada lambda expression yazmazsak id 2 olduğunda listedeki 1. indis değeri getirecek.
     }
-    @GetMapping("/artists")
+    @PostMapping("/artists")
     public Artist addArtist(@RequestBody Artist artist){
         Database.artists.add(artist);
         return artist;
